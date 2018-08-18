@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 docker-compose up -d redis
 
 docker rm -f $(docker ps -a | grep user-service | awk '{print $1}') || echo 'Not existed'
